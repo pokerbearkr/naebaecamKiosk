@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * 가장 기본적인 Kiosk
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
 
@@ -39,7 +42,7 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
-                    conti = false; //conti함수를 false로 바꿔서 반복중지
+                    conti = false; // conti함수를 false로 바꿔서 반복중지
                     break;
                 default:
                     System.out.println("올바른 숫자를 입력하세요."); //보기에 없는 숫자가 들어오면 예외처리

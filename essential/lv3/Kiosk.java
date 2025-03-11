@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+/**
+ * 메뉴 출력 및 유저 입력 관리
+ */
 public class Kiosk {
     private List<MenuItem> menuItems;
 

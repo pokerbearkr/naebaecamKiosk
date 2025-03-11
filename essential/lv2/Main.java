@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * MenuItem 따로 분리한 LV2
+ */
 public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,7 +31,7 @@ public class Main {
             System.out.print("메뉴를 선택하세요: ");
 
             try {
-                int choice = Integer.parseInt(br.readLine());
+                int choice = Integer.parseInt(br.readLine());  // 유저 선택
 
                 if (choice == 0) {
                     System.out.println("프로그램을 종료합니다.");
@@ -36,7 +39,7 @@ public class Main {
                     continue;
                 }
 
-                if (choice < 1 || choice > itemList.size()) {
+                if (choice < 1 || choice > itemList.size()) {  // 입력에 없는 번호나 음수가 들어올시 예외처리
                     System.out.println("올바른 숫자를 입력하세요.");
                     continue;
                 }

@@ -3,6 +3,9 @@ package essential.lv3;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 키오스크까지 클래스로 뺀 LV3
+ */
 public class Main {
     public static void main(String[] args) {
         List<MenuItem> menuItems = new ArrayList<>();
