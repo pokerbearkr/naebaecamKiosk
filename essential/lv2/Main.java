@@ -21,7 +21,7 @@ public class Main {
 
             for (int i = 0; i < itemList.size(); i++) {
                 MenuItem curItem = itemList.get(i);
-                System.out.println((i + 1) + ". " + curItem.name + "의 가격은 " + curItem.getPrice() + "원 입니다. " + curItem.description + "입니다.");
+                System.out.println((i + 1) + ". " + curItem.name + "의 가격은 " + curItem.price + "원 입니다. " + curItem.description + "입니다.");
             }
 
             System.out.println("0. 종료      | 종료");
