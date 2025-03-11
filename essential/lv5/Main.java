@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 카테고리 추가한 LV4
+ *  캡슐화와 Final을 추가한 LV5
  */
 public class Main {
 
