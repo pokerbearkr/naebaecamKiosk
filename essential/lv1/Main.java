@@ -6,10 +6,14 @@ import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean conti = true;
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 입력받는 용
+
+        boolean conti = true; // 반복하기 위해 만듦
+
 
         while (conti) {
+            //메뉴 출력
             System.out.println("[ SHAKESHACK MENU ]");
             System.out.println("1. ShackBurger   | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거");
             System.out.println("2. SmokeShack    | W 8.9 | 베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
@@ -18,9 +22,9 @@ public class Main {
             System.out.println("0. 종료      | 종료");
             System.out.print("메뉴를 선택하세요: ");
 
-            int choice = Integer.parseInt(br.readLine());
+            int choice = Integer.parseInt(br.readLine()); //사용자의 선택 받음
 
-            switch (choice) {
+            switch (choice) {  // 사용자가 고른것에 따라 선택한 메뉴 출력
                 case 1:
                     System.out.println("선택한 메뉴: ShackBurger | W 6.9 | 토마토, 양상추, 쉑소스가 토핑된 치즈버거");
                     break;
@@ -35,10 +39,10 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
-                    conti = false;
+                    conti = false; //conti함수를 false로 바꿔서 반복중지
                     break;
                 default:
-                    System.out.println("올바른 숫자를 입력하세요.");
+                    System.out.println("올바른 숫자를 입력하세요."); //보기에 없는 숫자가 들어오면 예외처리
                     break;
             }
         }
