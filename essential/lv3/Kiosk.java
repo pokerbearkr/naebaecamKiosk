@@ -36,7 +36,7 @@ public class Kiosk {
                     continue;
                 }
 
-                if (choice < 1 || choice > menuItems.size()) {
+                if (choice < 1 || choice > menuItems.size()) {  // 입력에 없는 번호나 음수가 들어올시 예외처리
                     System.out.println("올바른 숫자를 입력하세요.");
                     continue;
                 }

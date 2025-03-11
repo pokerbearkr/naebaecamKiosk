@@ -29,7 +29,7 @@ public class Kiosk {
                     continue;
                 }
 
-                if (choiceCategory < 1 || choiceCategory > menus.size()) {
+                if (choiceCategory < 1 || choiceCategory > menus.size()) {  // 입력에 없는 번호나 음수가 들어올시 예외처리
                     System.out.println("올바른 숫자를 입력하세요.");
                     continue;
                 }
@@ -51,7 +51,7 @@ public class Kiosk {
                             continue;
                         }
 
-                        if (choice < 1 || choice > chosenMenu.getMenulist().size()) {
+                        if (choice < 1 || choice > chosenMenu.getMenulist().size()) {  // 입력에 없는 번호나 음수가 들어올시 예외처리
                             System.out.println("올바른 숫자를 입력하세요.");
                             continue;
                         }
