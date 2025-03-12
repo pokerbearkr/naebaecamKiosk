@@ -30,7 +30,7 @@ public class Menu {
             System.out.println((i+1)+". "+list.getName()+" | w. " + list.getPrice()+" | "+list.getDescription());
         }
         System.out.println("0. 종료");
-        System.out.println(" 메뉴를 선택하세요. : ");
+        System.out.print(" 메뉴를 선택하세요. : ");
     }
 
 }

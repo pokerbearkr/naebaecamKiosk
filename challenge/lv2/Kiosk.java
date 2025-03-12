@@ -100,19 +100,38 @@ public class Kiosk {
         }
     }
 
-    //주문하기 장바구니가 비어있으면 주문불가
+    // 주문하기 장바구니가 비어있으면 주문불가
     private void processOrder() {
         if (!cart.haveItem()) {
             System.out.println("장바구니가 비어 있어 주문할 수 없습니다.");
             return;
         }
-        cart.printCart();
+
+        cart.printCart(); // 장바구니 출력
+
+        // 할인 유형 선택 및 할인율 적용
+        double discountRate;
+        try {
+            discountRate = selectUserType();
+        } catch (IOException e) {
+            System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+            return;
+        }
+
+        // 최종 금액 계산
+        int totalPrice = cart.getTotalPrice();
+        int discountedPrice = (int) (totalPrice * (1 - discountRate));
+
+        // 할인 적용 후 금액 출력
+        System.out.println("할인 금액 적용 후 최종 금액은 W " + discountedPrice + " 입니다.");
         System.out.println("주문하시겠습니까? (Y/N): ");
+
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String response = br.readLine().trim().toUpperCase(); //대소문자 및 공백 구분안해도 되게
+            String response = br.readLine().trim().toUpperCase(); // 대소문자 및 공백 무시
             if (response.equals("Y")) {
-                cart.clearCart();
+                System.out.println("주문이 완료되었습니다.");
+                cart.clearCart(); // 장바구니 초기화
             } else {
                 System.out.println("주문이 취소되었습니다.");
             }
@@ -120,4 +139,24 @@ public class Kiosk {
             System.out.println("입력 오류 발생. 다시 시도해주세요.");
         }
     }
+
+
+    private double selectUserType() throws IOException {
+        System.out.println("할인 정보를 입력해 주세요.");
+        for (UserType userType : UserType.values()) {
+            System.out.println(userType.ordinal() + 1 + ". " + userType.getName() + " (" + (userType.getDiscount() * 100) + "% 할인)");
+        }
+
+        System.out.print("할인 유형을 선택하세요 (숫자로 입력): ");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int choice = Integer.parseInt(br.readLine());
+        if (choice < 1 || choice > UserType.values().length) {
+            System.out.println("잘못된 입력입니다. 다시 선택해주세요.");
+            return selectUserType(); // 재귀 호출로 다시 선택
+        }
+
+        return UserType.values()[choice - 1].getDiscount();
+    }
+
 }
