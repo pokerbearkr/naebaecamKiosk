@@ -4,9 +4,9 @@ package challenge.lv2;
  * toString 오버라이딩 추가해서 읽기 편하게만듬
  */
 public class MenuItem {
-    private String name;
-    private int price;
-    private String description;
+    private final String name;
+    private final int price;
+    private final String description;
 
     public MenuItem(String name, int price, String description) {
         this.name = name;
@@ -28,6 +28,6 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return name + " | W " + price + " | " + description;
+        return name + " | ₩ " + price + " | " + description;
     }
 }

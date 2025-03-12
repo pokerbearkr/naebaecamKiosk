@@ -123,7 +123,7 @@ public class Kiosk {
         int discountedPrice = (int) (totalPrice * (1 - discountRate));
 
         // 할인 적용 후 금액 출력
-        System.out.println("할인 금액 적용 후 최종 금액은 W " + discountedPrice + " 입니다.");
+        System.out.println("할인 금액 적용 후 최종 금액은 ₩ " + discountedPrice + " 입니다.");
         System.out.println("주문하시겠습니까? (Y/N): ");
 
         try {

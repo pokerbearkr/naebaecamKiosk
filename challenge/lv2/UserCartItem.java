@@ -6,16 +6,16 @@ package challenge.lv2;
  */
 public class UserCartItem {
     // 아이템 이름과 개수를 선언
-    private MenuItem menuItem;
+    private final MenuItem menuItem;
     private int quantity;
 
-    //생성자
+    // 생성자
     public UserCartItem(MenuItem menuItem, int quantity) {
         this.menuItem = menuItem;
         this.quantity = quantity;
     }
 
-    //getter
+    // getter
     public MenuItem getMenuItem() {
         return menuItem;
     }
@@ -24,7 +24,7 @@ public class UserCartItem {
         return quantity;
     }
 
-    //1종류 아이템의 총 가격
+    // 1종류 아이템의 총 가격
     public int getTotalPrice() {
         return menuItem.getPrice() * quantity;
     }
@@ -35,6 +35,6 @@ public class UserCartItem {
 
     @Override
     public String toString() {
-        return menuItem.getName() + " | W " + menuItem.getPrice() + " | 수량: " + quantity + " | 합계: W " + getTotalPrice();
+        return menuItem.getName() + " | ₩ " + menuItem.getPrice() + " | 수량: " + quantity + " | 합계: ₩ " + getTotalPrice();
     }
 }

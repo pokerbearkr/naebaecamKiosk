@@ -15,11 +15,11 @@ public class Menu {
 
     //Getter
     public String getCategoryType() {
-        return categoryType;
+        return this.categoryType;
     }
 
     public List<MenuItem> getMenulist() {
-        return menulist;
+        return this.menulist;
     }
 
     // 메뉴 출력 함수
@@ -27,7 +27,7 @@ public class Menu {
         System.out.println("[ "+categoryType+" MENU ]");
         for (int i = 0; i < menulist.size(); i++) {
             MenuItem list = menulist.get(i);
-            System.out.println((i+1)+". "+list.getName()+" | w. " + list.getPrice()+" | "+list.getDescription());
+            System.out.println((i+1)+". "+list.getName()+" | ₩. " + list.getPrice()+" | "+list.getDescription());
         }
         System.out.println("0. 종료");
         System.out.print(" 메뉴를 선택하세요. : ");

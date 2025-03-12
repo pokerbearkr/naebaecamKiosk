@@ -12,13 +12,13 @@ public enum UserType {
     private final String name;
     private final double discount;
 
-    //생성자
+    // 생성자
     UserType(String name, double discount) {
         this.name = name;
         this.discount = discount;
     }
 
-    //getter
+    // getter
     public String getName() {
         return name;
     }
